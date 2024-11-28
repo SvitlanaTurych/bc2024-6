@@ -1,0 +1,14 @@
+services:
+  server:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 9229:9229
+      - 8000:8080
+    command: npx nodemon -L index.js --host 0.0.0.0 --port 8000 --cache notes
+
+   
